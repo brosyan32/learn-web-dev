@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Выбор даты и времени записи в барбершоп БОР.">
+  <title>Выбор даты и времени — БОР</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page">
+  <header class="header">
+    <div class="container header__inner">
+      <a class="logo" href="#" aria-label="БОР — главная">БОР</a>
+      <nav class="nav" aria-label="Основная навигация">
+        <a class="nav__link" href="#services">Услуги</a>
+        <a class="nav__link" href="#gallery">Галерея</a>
+        <a class="nav__link" href="#team">Команда</a>
+        <a class="nav__link" href="#reviews">Отзывы</a>
+        <a class="nav__link" href="#contacts">Контакты</a>
+      </nav>
+    </div>
+  </header>
+  <main class="main container">
+    <ol class="steps" aria-label="Этапы записи">
+      <li class="steps__item steps__item--complete"><span class="steps__number">1</span><span class="visually-hidden">Выбор услуги, завершено</span></li>
+      <li class="steps__item steps__item--complete"><span class="steps__number">2</span><span class="visually-hidden">Выбор мастера, завершено</span></li>
+      <li class="steps__item steps__item--current" aria-current="step"><span class="steps__number">3</span><span class="visually-hidden">Выбор даты и времени</span></li>
+      <li class="steps__item"><span class="steps__number">4</span><span class="visually-hidden">Контактные данные</span></li>
+      <li class="steps__item"><span class="steps__number">5</span><span class="visually-hidden">Подтверждение</span></li>
+    </ol>
+    <h1 class="title">Календарь</h1>
+    <form class="booking">
+      <fieldset class="calendar">
+        <legend class="visually-hidden">Выберите дату</legend>
+        <div class="calendar__header">
+          <h2 class="calendar__month">Выбор месяца</h2>
+          <div class="calendar__arrows">
+            <button class="calendar__arrow" type="button" aria-label="Предыдущий месяц">‹</button>
+            <button class="calendar__arrow" type="button" aria-label="Следующий месяц">›</button>
+          </div>
+        </div>
+        <div class="calendar__grid"></div>
+      </fieldset>
+      <div class="booking__right">
+        <fieldset class="times">
+          <legend class="visually-hidden">Выберите свободное время</legend>
+          <h2 class="times__title">Доступное время</h2>
+          <div class="times__grid"></div>
+        </fieldset>
+        <div class="selection" aria-live="polite"><p class="selection__summary"></p><p class="selection__message" role="status"></p></div>
+        <button class="confirm" type="submit" disabled>Подтвердить</button>
+      </div>
+    </form>
+  </main>
+  <footer class="footer" id="contacts">
+    <div class="container">
+      <div class="footer__columns">
+        <div class="footer__brand"><a class="logo" href="#">БОР</a><p class="footer__muted">Стрижки и бритьё с характером.</p></div>
+        <section class="footer__section"><h2 class="footer__title">Контакты</h2><address class="footer__address"><p class="footer__muted">♧ &nbsp;ул. Садовая, 15, Москва</p><a class="footer__phone" href="tel:+74951234567">☎ &nbsp;+7 (495) 123-45-67</a></address></section>
+        <section class="footer__section"><h2 class="footer__title">Режим работы</h2><p class="footer__hours">Пн–Пт: 9:00 – 21:00<br>Сб–Вс: 10:00 – 19:00</p></section>
+      </div>
+      <div class="footer__bottom"><p class="footer__copyright">© 2026. Все права защищены.</p><a class="footer__policy" href="#privacy">Политика конфиденциальности</a></div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
