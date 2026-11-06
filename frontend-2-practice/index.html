@@ -2,66 +2,87 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Выбор даты и времени записи в барбершоп БОР.">
-  <title>Выбор даты и времени — БОР</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Выбор даты и времени — Барбершоп «Бритва»</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="page">
+
   <header class="header">
-    <div class="container header__inner">
-      <a class="logo" href="#" aria-label="БОР — главная">БОР</a>
-      <nav class="nav" aria-label="Основная навигация">
-        <a class="nav__link" href="#services">Услуги</a>
-        <a class="nav__link" href="#gallery">Галерея</a>
-        <a class="nav__link" href="#team">Команда</a>
-        <a class="nav__link" href="#reviews">Отзывы</a>
-        <a class="nav__link" href="#contacts">Контакты</a>
+    <div class="header__inner">
+      <a class="logo" href="#">Бритва</a>
+      <nav class="nav">
+        <a class="nav__link" href="#">Главная</a>
+        <a class="nav__link" href="#">Услуги</a>
+        <a class="nav__link nav__link--active" href="#">Запись</a>
+        <a class="nav__link" href="#">Контакты</a>
       </nav>
     </div>
   </header>
-  <main class="main container">
-    <ol class="steps" aria-label="Этапы записи">
-      <li class="steps__item steps__item--complete"><span class="steps__number">1</span><span class="visually-hidden">Выбор услуги, завершено</span></li>
-      <li class="steps__item steps__item--complete"><span class="steps__number">2</span><span class="visually-hidden">Выбор мастера, завершено</span></li>
-      <li class="steps__item steps__item--current" aria-current="step"><span class="steps__number">3</span><span class="visually-hidden">Выбор даты и времени</span></li>
-      <li class="steps__item"><span class="steps__number">4</span><span class="visually-hidden">Контактные данные</span></li>
-      <li class="steps__item"><span class="steps__number">5</span><span class="visually-hidden">Подтверждение</span></li>
-    </ol>
-    <h1 class="title">Календарь</h1>
-    <form class="booking">
-      <fieldset class="calendar">
-        <legend class="visually-hidden">Выберите дату</legend>
-        <div class="calendar__header">
-          <h2 class="calendar__month">Выбор месяца</h2>
-          <div class="calendar__arrows">
-            <button class="calendar__arrow" type="button" aria-label="Предыдущий месяц">‹</button>
-            <button class="calendar__arrow" type="button" aria-label="Следующий месяц">›</button>
+
+  <main class="main">
+
+    <section class="intro">
+      <p class="steps">Шаг 3 из 4</p>
+      <h1 class="title">Выберите дату и время</h1>
+      <p class="intro__text">Мастер: Артём · Мужская стрижка, 45 минут</p>
+    </section>
+
+    <div class="booking">
+
+      <div class="booking__choice">
+
+        <section class="block calendar">
+          <div class="calendar__head">
+            <button class="calendar__arrow" id="prev-month" type="button" aria-label="Предыдущий месяц">‹</button>
+            <h2 class="block__title" id="month-title">Ноябрь 2026</h2>
+            <button class="calendar__arrow" id="next-month" type="button" aria-label="Следующий месяц">›</button>
           </div>
+          <div class="calendar__week">
+            <span class="calendar__dow">пн</span>
+            <span class="calendar__dow">вт</span>
+            <span class="calendar__dow">ср</span>
+            <span class="calendar__dow">чт</span>
+            <span class="calendar__dow">пт</span>
+            <span class="calendar__dow">сб</span>
+            <span class="calendar__dow">вс</span>
+          </div>
+          <div class="calendar__grid" id="calendar-grid"></div>
+        </section>
+
+        <section class="block times">
+          <h2 class="block__title">Время</h2>
+          <ul class="legend">
+            <li class="legend__item legend__item--free">Свободно</li>
+            <li class="legend__item legend__item--busy">Занято</li>
+          </ul>
+          <div class="slots" id="slots"></div>
+        </section>
+
+      </div>
+
+      <aside class="bottom-bar">
+        <div class="bottom-bar__info">
+          <p class="bottom-bar__label">Ваша запись</p>
+          <p class="bottom-bar__value" id="bottom-bar-text">Выберите дату и время</p>
+          <p class="bottom-bar__service">Мужская стрижка · Артём · 1 500 ₽</p>
         </div>
-        <div class="calendar__grid"></div>
-      </fieldset>
-      <div class="booking__right">
-        <fieldset class="times">
-          <legend class="visually-hidden">Выберите свободное время</legend>
-          <h2 class="times__title">Доступное время</h2>
-          <div class="times__grid"></div>
-        </fieldset>
-        <div class="selection" aria-live="polite"><p class="selection__summary"></p><p class="selection__message" role="status"></p></div>
-        <button class="confirm" type="submit" disabled>Подтвердить</button>
-      </div>
-    </form>
+        <button class="button" id="confirm-button" type="button" disabled>Подтвердить запись</button>
+      </aside>
+
+    </div>
   </main>
-  <footer class="footer" id="contacts">
-    <div class="container">
-      <div class="footer__columns">
-        <div class="footer__brand"><a class="logo" href="#">БОР</a><p class="footer__muted">Стрижки и бритьё с характером.</p></div>
-        <section class="footer__section"><h2 class="footer__title">Контакты</h2><address class="footer__address"><p class="footer__muted">♧ &nbsp;ул. Садовая, 15, Москва</p><a class="footer__phone" href="tel:+74951234567">☎ &nbsp;+7 (495) 123-45-67</a></address></section>
-        <section class="footer__section"><h2 class="footer__title">Режим работы</h2><p class="footer__hours">Пн–Пт: 9:00 – 21:00<br>Сб–Вс: 10:00 – 19:00</p></section>
-      </div>
-      <div class="footer__bottom"><p class="footer__copyright">© 2026. Все права защищены.</p><a class="footer__policy" href="#privacy">Политика конфиденциальности</a></div>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <p class="footer__text">Барбершоп «Бритва», Ярославль, ул. Свободы, 46</p>
+      <p class="footer__text">Ежедневно с 10:00 до 20:00 · +7 (4852) 00-00-00</p>
     </div>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
