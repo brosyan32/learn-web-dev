@@ -2,64 +2,190 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Выбор даты и времени записи в барбершоп БОР.">
-  <title>Выбор даты и времени — БОР</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Выбор даты и времени — Барбершоп «Бритва»</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="page">
+
   <header class="header">
-    <div class="container header__inner">
-      <a class="logo" href="#" aria-label="БОР — главная">БОР</a>
-      <nav class="nav" aria-label="Основная навигация">
-        <a class="nav__link" href="#services">Услуги</a>
-        <a class="nav__link" href="#gallery">Галерея</a>
-        <a class="nav__link" href="#team">Команда</a>
-        <a class="nav__link" href="#reviews">Отзывы</a>
-        <a class="nav__link" href="#contacts">Контакты</a>
+    <div class="header__inner">
+      <a class="logo" href="#">Бритва</a>
+      <nav class="nav">
+        <a class="nav__link" href="#">Главная</a>
+        <a class="nav__link" href="#">Услуги</a>
+        <a class="nav__link nav__link--active" href="#">Запись</a>
+        <a class="nav__link" href="#">Контакты</a>
       </nav>
     </div>
   </header>
-  <main class="main container">
-    <ol class="steps" aria-label="Этапы записи">
-      <li class="steps__item steps__item--complete"><span class="steps__number">1</span><span class="visually-hidden">Выбор услуги, завершено</span></li>
-      <li class="steps__item steps__item--complete"><span class="steps__number">2</span><span class="visually-hidden">Выбор мастера, завершено</span></li>
-      <li class="steps__item steps__item--current" aria-current="step"><span class="steps__number">3</span><span class="visually-hidden">Выбор даты и времени</span></li>
-      <li class="steps__item"><span class="steps__number">4</span><span class="visually-hidden">Контактные данные</span></li>
-      <li class="steps__item"><span class="steps__number">5</span><span class="visually-hidden">Подтверждение</span></li>
-    </ol>
-    <h1 class="title">Календарь</h1>
-    <form class="booking" action="#preview">
-      <fieldset class="calendar">
-        <legend class="visually-hidden">Выберите дату</legend>
-        <div class="calendar__header">
-          <h2 class="calendar__month">Июнь 2025</h2>
-          <div class="calendar__arrows">
-            <button class="calendar__arrow" type="button" aria-label="Предыдущий месяц (макет)">‹</button>
-            <button class="calendar__arrow" type="button" aria-label="Следующий месяц (макет)">›</button>
+
+  <main class="main">
+
+    <section class="intro">
+      <p class="steps">Шаг 3 из 4</p>
+      <h1 class="title">Выберите дату и время</h1>
+      <p class="intro__text">Мастер: Артём · Мужская стрижка, 45 минут</p>
+    </section>
+
+    <form class="booking" action="#" method="post">
+
+      <div class="booking__choice">
+
+        <fieldset class="block">
+          <legend class="block__title">Дата</legend>
+          <div class="days">
+            <label class="day">
+              <input class="day__input" type="radio" name="date" value="2026-11-09" checked>
+              <span class="day__card">
+                <span class="day__week">пн</span>
+                <span class="day__num">9</span>
+                <span class="day__month">ноября</span>
+              </span>
+            </label>
+            <label class="day">
+              <input class="day__input" type="radio" name="date" value="2026-11-10">
+              <span class="day__card">
+                <span class="day__week">вт</span>
+                <span class="day__num">10</span>
+                <span class="day__month">ноября</span>
+              </span>
+            </label>
+            <label class="day">
+              <input class="day__input" type="radio" name="date" value="2026-11-11">
+              <span class="day__card">
+                <span class="day__week">ср</span>
+                <span class="day__num">11</span>
+                <span class="day__month">ноября</span>
+              </span>
+            </label>
+            <label class="day">
+              <input class="day__input" type="radio" name="date" value="2026-11-12">
+              <span class="day__card">
+                <span class="day__week">чт</span>
+                <span class="day__num">12</span>
+                <span class="day__month">ноября</span>
+              </span>
+            </label>
+            <label class="day">
+              <input class="day__input" type="radio" name="date" value="2026-11-13">
+              <span class="day__card">
+                <span class="day__week">пт</span>
+                <span class="day__num">13</span>
+                <span class="day__month">ноября</span>
+              </span>
+            </label>
+            <label class="day">
+              <input class="day__input" type="radio" name="date" value="2026-11-14">
+              <span class="day__card">
+                <span class="day__week">сб</span>
+                <span class="day__num">14</span>
+                <span class="day__month">ноября</span>
+              </span>
+            </label>
           </div>
-        </div>
-        <div class="calendar__grid"><span class="weekday" aria-hidden="true">Пн</span><span class="weekday" aria-hidden="true">Вт</span><span class="weekday" aria-hidden="true">Ср</span><span class="weekday" aria-hidden="true">Чт</span><span class="weekday" aria-hidden="true">Пт</span><span class="weekday" aria-hidden="true">Сб</span><span class="weekday" aria-hidden="true">Вс</span><span class="day day--outside">26</span><span class="day day--outside">27</span><span class="day day--outside">28</span><span class="day day--outside">29</span><span class="day day--outside">30</span><span class="day day--outside">31</span><label class="day"><input class="choice" type="radio" name="date" value="2025-06-01" required><span class="day__number">1</span></label><label class="day"><input class="choice" type="radio" name="date" value="2025-06-02" required><span class="day__number">2</span></label><label class="day"><input class="choice" type="radio" name="date" value="2025-06-03" required><span class="day__number">3</span></label><label class="day"><input class="choice" type="radio" name="date" value="2025-06-04" required><span class="day__number">4</span></label><label class="day"><input class="choice" type="radio" name="date" value="2025-06-05" required><span class="day__number">5</span></label><label class="day"><input class="choice" type="radio" name="date" value="2025-06-06" required><span class="day__number">6</span></label><label class="day"><input class="choice" type="radio" name="date" value="2025-06-07" required><span class="day__number">7</span></label><label class="day"><input class="choice" type="radio" name="date" value="2025-06-08" required><span class="day__number">8</span></label><label class="day"><input class="choice" type="radio" name="date" value="2025-06-09" required><span class="day__number">9</span></label><label class="day"><input class="choice" type="radio" name="date" value="2025-06-10" required><span class="day__number">10</span></label><label class="day"><input class="choice" type="radio" name="date" value="2025-06-11" required><span class="day__number">11</span></label><label class="day"><input class="choice" type="radio" name="date" value="2025-06-12" required><span class="day__number">12</span></label><label class="day"><input class="choice" type="radio" name="date" value="2025-06-13" required><span class="day__number">13</span></label><label class="day"><input class="choice" type="radio" name="date" value="2025-06-14" required><span class="day__number">14</span></label><label class="day"><input class="choice" type="radio" name="date" value="2025-06-15" required><span class="day__number">15</span></label><label class="day"><input class="choice" type="radio" name="date" value="2025-06-16" required><span class="day__number">16</span></label><label class="day"><input class="choice" type="radio" name="date" value="2025-06-17" required><span class="day__number">17</span></label><label class="day"><input class="choice" type="radio" name="date" value="2025-06-18" required><span class="day__number">18</span></label><label class="day"><input class="choice" type="radio" name="date" value="2025-06-19" required><span class="day__number">19</span></label><label class="day"><input class="choice" type="radio" name="date" value="2025-06-20" required><span class="day__number">20</span></label><label class="day"><input class="choice" type="radio" name="date" value="2025-06-21" required><span class="day__number">21</span></label><label class="day"><input class="choice" type="radio" name="date" value="2025-06-22" required><span class="day__number">22</span></label><span class="day day--outside">1</span></div>
-      </fieldset>
-      <div class="booking__right">
-        <fieldset class="times">
-          <legend class="visually-hidden">Выберите свободное время</legend>
-          <h2 class="times__title">Доступное время</h2>
-          <div class="times__grid"><label class="slot"><input class="choice" type="radio" name="time" value="10:00" required><span class="slot__time">10:00</span></label><button class="slot slot--busy" type="button" disabled aria-label="11:00, занято"><span>11:00</span><small class="slot__status">Занято</small></button><label class="slot"><input class="choice" type="radio" name="time" value="12:00" required><span class="slot__time">12:00</span></label><button class="slot slot--busy" type="button" disabled aria-label="13:00, занято"><span>13:00</span><small class="slot__status">Занято</small></button><label class="slot"><input class="choice" type="radio" name="time" value="14:00" required><span class="slot__time">14:00</span></label><label class="slot"><input class="choice" type="radio" name="time" value="15:00" required><span class="slot__time">15:00</span></label><label class="slot"><input class="choice" type="radio" name="time" value="16:00" required><span class="slot__time">16:00</span></label><label class="slot"><input class="choice" type="radio" name="time" value="17:00" required><span class="slot__time">17:00</span></label></div>
         </fieldset>
-        <button class="confirm" type="submit">Подтвердить</button>
+
+        <fieldset class="block">
+          <legend class="block__title">Время</legend>
+          <ul class="legend">
+            <li class="legend__item legend__item--free">Свободно</li>
+            <li class="legend__item legend__item--busy">Занято</li>
+          </ul>
+          <div class="slots">
+            <label class="slot">
+              <input class="slot__input" type="radio" name="time" value="10:00">
+              <span class="slot__box">10:00</span>
+            </label>
+            <label class="slot">
+              <input class="slot__input" type="radio" name="time" value="10:45" disabled>
+              <span class="slot__box">10:45</span>
+            </label>
+            <label class="slot">
+              <input class="slot__input" type="radio" name="time" value="11:30" disabled>
+              <span class="slot__box">11:30</span>
+            </label>
+            <label class="slot">
+              <input class="slot__input" type="radio" name="time" value="12:15">
+              <span class="slot__box">12:15</span>
+            </label>
+            <label class="slot">
+              <input class="slot__input" type="radio" name="time" value="13:00" checked>
+              <span class="slot__box">13:00</span>
+            </label>
+            <label class="slot">
+              <input class="slot__input" type="radio" name="time" value="13:45" disabled>
+              <span class="slot__box">13:45</span>
+            </label>
+            <label class="slot">
+              <input class="slot__input" type="radio" name="time" value="14:30">
+              <span class="slot__box">14:30</span>
+            </label>
+            <label class="slot">
+              <input class="slot__input" type="radio" name="time" value="15:15">
+              <span class="slot__box">15:15</span>
+            </label>
+            <label class="slot">
+              <input class="slot__input" type="radio" name="time" value="16:00" disabled>
+              <span class="slot__box">16:00</span>
+            </label>
+            <label class="slot">
+              <input class="slot__input" type="radio" name="time" value="16:45">
+              <span class="slot__box">16:45</span>
+            </label>
+            <label class="slot">
+              <input class="slot__input" type="radio" name="time" value="17:30">
+              <span class="slot__box">17:30</span>
+            </label>
+            <label class="slot">
+              <input class="slot__input" type="radio" name="time" value="18:15" disabled>
+              <span class="slot__box">18:15</span>
+            </label>
+          </div>
+        </fieldset>
+
       </div>
+
+      <aside class="summary">
+        <h2 class="summary__title">Ваша запись</h2>
+        <dl class="summary__list">
+          <div class="summary__row">
+            <dt class="summary__term">Услуга</dt>
+            <dd class="summary__value">Мужская стрижка</dd>
+          </div>
+          <div class="summary__row">
+            <dt class="summary__term">Мастер</dt>
+            <dd class="summary__value">Артём</dd>
+          </div>
+          <div class="summary__row">
+            <dt class="summary__term">Дата</dt>
+            <dd class="summary__value">9 ноября, пн</dd>
+          </div>
+          <div class="summary__row">
+            <dt class="summary__term">Время</dt>
+            <dd class="summary__value">13:00</dd>
+          </div>
+          <div class="summary__row summary__row--total">
+            <dt class="summary__term">Стоимость</dt>
+            <dd class="summary__value">1 500 ₽</dd>
+          </div>
+        </dl>
+        <button class="button" type="submit">Подтвердить запись</button>
+        <a class="back" href="#">Назад к выбору мастера</a>
+      </aside>
+
     </form>
   </main>
-  <footer class="footer" id="contacts">
-    <div class="container">
-      <div class="footer__columns">
-        <div class="footer__brand"><a class="logo" href="#">БОР</a><p class="footer__muted">Стрижки и бритьё с характером.</p></div>
-        <section class="footer__section"><h2 class="footer__title">Контакты</h2><address class="footer__address"><p class="footer__muted">♧ &nbsp;ул. Садовая, 15, Москва</p><a class="footer__phone" href="tel:+74951234567">☎ &nbsp;+7 (495) 123-45-67</a></address></section>
-        <section class="footer__section"><h2 class="footer__title">Режим работы</h2><p class="footer__hours">Пн–Пт: 9:00 – 21:00<br>Сб–Вс: 10:00 – 19:00</p></section>
-      </div>
-      <div class="footer__bottom"><p class="footer__copyright">© 2026. Все права защищены.</p><a class="footer__policy" href="#privacy">Политика конфиденциальности</a></div>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <p class="footer__text">Барбершоп «Бритва», Ярославль, ул. Свободы, 46</p>
+      <p class="footer__text">Ежедневно с 10:00 до 20:00 · +7 (4852) 00-00-00</p>
     </div>
   </footer>
+
 </body>
 </html>
